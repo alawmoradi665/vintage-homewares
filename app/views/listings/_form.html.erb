@@ -1,4 +1,4 @@
-
+<div class="all-forms">
 <%= simple_form_for(@listing) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -10,7 +10,7 @@
     <%= f.input :description %>
     <%= f.input :shipping %>
     <%= f.input :availability %>
-    <%= f.association :profile %>
+    <%# <%= f.association :profile %>
     <%= f.input :seller_id %>
     <%= f.input :buyer_id %>
   </div>
@@ -19,3 +19,4 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+</div>
