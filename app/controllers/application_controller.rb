@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
         if current_user.profile
             root_path
         else
-            redirect_to new_profile_path 
+            new_profile_path 
         end 
-
     end 
 end
