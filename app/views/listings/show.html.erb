@@ -35,9 +35,10 @@
   <%= @listing.profile_id %>
 </p>
 
+<%# Show contact name on the listing %>
 <p>
   <strong>Seller:</strong>
-  <%= @listing.seller_id %>
+  <%= @listing.seller.contact_name %>
 </p>
 
 <p>

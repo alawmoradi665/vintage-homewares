@@ -1,37 +1,38 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Appname</a>
+    <a class="navbar-brand" href="/">ANTIQ</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <%# Left side of the navbar %>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         <li class="nav-item">
-         <% if user_signed_in? %>
-         <%= link_to "Add listing", new_listing_path, class: "btn btn-light"%>
-         <% end %>
-        </li>
+        
       </ul>
 <%# Right side of navbar %>
       <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+       <li class="nav-item">
+         <% if user_signed_in? %>
+         <%= link_to "ADD LISTING", new_listing_path, class: "nav-link"%>
+         <% end %>
+        </li>
          <li class="nav-item">
          <% if user_signed_in? %>
           <%# change this to a ruby link when my listings page is created %>
-          <a class="nav-link active" aria-current="page" href="#">My listings</a>
+          <a class="nav-link" aria-current="page" href="#">MY LISTINGS</a>
           <% end %>
         </li>
         <li class="nav-item">
         <% if user_signed_in? %>
-        <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class: "nav-link" %>
           <% else %>
              <li class="nav-item">
-          <%= link_to 'Log In', new_user_session_path, class: "nav-link" %>
+          <%= link_to 'LOG IN', new_user_session_path, class: "nav-link" %>
         </li>
         <% end %>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">About us</a>
+          <a class="nav-link " aria-current="page" href="#">ABOUT ANTIQ</a>
         </li>
       </ul>
     </div>
