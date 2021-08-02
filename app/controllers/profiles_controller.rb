@@ -22,6 +22,8 @@ class ProfilesController < ApplicationController
   # POST /profiles or /profiles.json
   def create
     @profile = Profile.new(profile_params)
+# Connecting the new profile with the current user id as foreign key
+    @profile.user_id = current_user.id
 
     respond_to do |format|
       if @profile.save
