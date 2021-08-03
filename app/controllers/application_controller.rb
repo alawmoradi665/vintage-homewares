@@ -6,5 +6,8 @@ class ApplicationController < ActionController::Base
         else
             new_profile_path 
         end 
-    end 
+    end
 end
+
+
+

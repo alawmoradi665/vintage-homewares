@@ -23,9 +23,9 @@ class ListingsController < ApplicationController
   # POST /listings or /listings.json
   def create
     @listing = Listing.new(listing_params)
-# Connecting the listing with its seller
+    # associate the car listed to a seller. Meaning, listing that is being put up is connected to the current logged in users profile id. 
     @listing.seller_id = current_user.profile.id
-    
+
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: "Listing was successfully created." }

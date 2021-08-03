@@ -12,6 +12,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
+    # capture any params being passed
+    @user_type = params[:user_type] if params[:user_type]
     @profile = Profile.new
   end
 

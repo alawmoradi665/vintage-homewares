@@ -7,7 +7,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @listing.price %>
+  $<%= @listing.price %>
 </p>
 
 <p>
@@ -30,21 +30,21 @@
   <%= @listing.availability %>
 </p>
 
-<p>
+<%# <p>
   <strong>Profile:</strong>
   <%= @listing.profile_id %>
-</p>
+<%# </p>  %>
 
-<%# Show contact name on the listing %>
+<%# Show chosen contact name on the listing %>
 <p>
   <strong>Seller:</strong>
   <%= @listing.seller.contact_name %>
 </p>
 
-<p>
+<%# <p>
   <strong>Buyer:</strong>
   <%= @listing.buyer_id %>
-</p>
+<%# </p> %>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
