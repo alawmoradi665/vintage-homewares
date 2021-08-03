@@ -13,7 +13,16 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @listing = Listing.new
+# If user has created signed up and has a profile, go to new listing, if not, create profile
+    if user_signed_in?
+      if current_user.profile
+        @listing = Listing.new
+      else 
+        redirect_to new_profile_path
+      end 
+    else 
+    redirect_to new_user_session_path 
+    end 
   end
 
   # GET /listings/1/edit
@@ -23,7 +32,7 @@ class ListingsController < ApplicationController
   # POST /listings or /listings.json
   def create
     @listing = Listing.new(listing_params)
-    # associate the car listed to a seller. Meaning, listing that is being put up is connected to the current logged in users profile id. 
+# Associating the listing to a seller. Meaning, listing that is being put up is connected to the current users profile id. 
     @listing.seller_id = current_user.profile.id
 
     respond_to do |format|
