@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_07_30_081850) do
     t.text "description"
     t.boolean "shipping"
     t.string "availability"
-    t.bigint "profile_id", null: false
+    t.bigint "profile_id"
     t.integer "seller_id"
     t.integer "buyer_id"
     t.datetime "created_at", precision: 6, null: false
